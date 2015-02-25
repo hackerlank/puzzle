@@ -95,7 +95,6 @@
 		    kk[i] = getPixel(src, pos[i][0]*5, pos[i][1]*5);
 			pos[i][0] -= 25;
 			pos[i][1] -= 25;
-			console.log(pos[i][0], pos[i][1]);
 		}
 
 		var ret = new Array(30);
@@ -104,11 +103,11 @@
 		    ret[i] = [9999999, 0, 0, 0];
 		}
 
-		for(var s = 0.9; s < 1.1; s+=0.1)
+		for(var s = 0.9; s < 1.1; s+=0.05)
 		{
-		    for(var y = 25; y < dst.width - 25; y+=5)
+		    for(var y = 25; y < dst.width - 25; y+=3)
 		    {
-		        for(var x = 25; x < dst.height - 25; x+=5)
+		        for(var x = 25; x < dst.height - 25; x+=3)
 				{
 				    for(var d = 0; d < 4; d++)
 					{
@@ -141,7 +140,6 @@
 		{
 			c3.strokeStyle="rgba(0,0,"+(255-i*5)+",0.5)";
 	        c3.strokeRect(ret[i][1] - 25,ret[i][2] - 25,50,50);
-	        console.log(ret[i][1], ret[i][2]);
 		}
 	}
 
